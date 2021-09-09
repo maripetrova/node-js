@@ -1,0 +1,37 @@
+body {
+    margin: 0 ;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+    flex-direction: column;
+    color: #13320f;
+}
+input {
+    outline: none;
+}
+button {
+    margin-left: 10px;
+}
+.task {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #13320f;
+}
+.task>input {
+    margin-right: 10px;
+}
+.task-list {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.complete {
+    text-decoration: line-through solid;
+    color: rgba(19, 50, 15, 0.75);
+}

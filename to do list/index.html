@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="addForm">
+        <h1>To do list</h1>
+        <form name="form">
+            <input type="text" name="message" placeholder="to do">
+            <input type="submit" value="push">
+        </form>
+    </div>
+    <div class="task-list">
+
+    </div>
+    <script>
+        const add = function (massage) {
+            let taskList = document.getElementsByClassName("task-list")[0];
+            let div = document.createElement("div");
+            div.className = "task";
+            taskList.appendChild(div);
+            let input = document.createElement("input");
+            input.type = "checkbox";
+            input.className = "task-input";
+            div.appendChild(input);
+            let taskText = document.createElement("p");
+            div.appendChild(taskText);
+            let btn = document.createElement("button");
+            div.appendChild(btn);
+            btn.className = "delete"
+            btn.innerHTML = "delete";
+            taskText.innerHTML = massage;
+        }
+        document.forms.form.onsubmit = function() {
+            let message = this.message.value;
+            add(message);
+            return false;
+        }
+    </script>
+</body>
+</html>
