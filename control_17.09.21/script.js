@@ -1,32 +1,30 @@
 let fs = require("fs");
-
 let text = fs.readFileSync("ppl.csv", "utf8");
-// let newClass = class Person {
-//     constructor(surname, name, docName, gender, birthdate) {
-//         this.surname = ;
-//         this.name = ;
-//         this.docName = ;
-//         this.gender = ;
-//         this.birthdate = ;
-//     }
-// }
 
-let arr = text.split("\n");
-console.log(arr)
-array = [];
-// for (let i = 0; i <= arr.length; i++) {
-//     let strArr = arr[i];
-//     let r = strArr.split(" ");
-//     console.log(strArr);
-// }
-arr.forEach(element => {
-    let strArr = element;
-    let firstArr = strArr.split(`;`);
-    console.log(firstArr);
-    array.push(firstArr);
-    console.log(array);
+let textArr = text.split("\n");
+let textArrArr = [];
+
+textArr.forEach((e) => {
+    textArrArr.push(e.split(";"))
 })
-array.forEach((e) => {
+textArrArr.forEach((e) => {
     e.pop()
 })
-console.log(array);
+
+let Person = class  {
+    constructor(name, surname, birthday, gender) {
+        this.name = name;
+        this.surname = surname;
+        this.docName = `${this.name[0]}. ${this.surname}`;
+        this.birthday = birthday;
+        this.gender = gender;
+    }
+}
+
+let arrObj = [];
+for (let i = 0; i < textArrArr.length; i++) {
+    arrObj.push(new Person(...textArrArr[i]));
+}
+console.log(arrObj)
+
+
