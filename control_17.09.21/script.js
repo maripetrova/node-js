@@ -1,18 +1,18 @@
-let fs = require("fs");
-let text = fs.readFileSync("ppl.csv", "utf8");
+let per = require("fs");
+let text = per.readFileSync("ppl.csv", "utf8");
 
 let textArr = text.split("\n");
-let textArrArr = [];
+let textArrDubl = [];
 
 textArr.forEach((e) => {
-    textArrArr.push(e.split(";"))
+    textArrDubl.push(e.split(";"))
 })
-textArrArr.forEach((e) => {
+textArrDubl.forEach((e) => {
     e.pop()
 })
 
 let Person = class  {
-    constructor(name, surname, birthday, gender) {
+    constructor(name, surname, gender, birthday) {
         this.name = name;
         this.surname = surname;
         this.docName = `${this.name[0]}. ${this.surname}`;
@@ -20,11 +20,15 @@ let Person = class  {
         this.gender = gender;
     }
 }
-
 let arrObj = [];
-for (let i = 0; i < textArrArr.length; i++) {
-    arrObj.push(new Person(...textArrArr[i]));
+for (let i = 0; i < textArrDubl.length; i++) {
+    arrObj.push(new Person(...textArrDubl[i]));
 }
-console.log(arrObj)
 
-
+let female = [];
+for (let i = 0; i < arrObj.length; i++) {
+    if (arrObj[i].gender === "female") {
+        female.push(arrObj[i].docName);
+    }
+}
+console.log(female)
