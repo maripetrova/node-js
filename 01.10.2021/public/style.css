@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.site {
+    height: 100vh;
+    width: 700px;
+    margin: auto;
+} 
+.square {
+    height: 50vh;
+    border: double;
+}
+.colors{
+    height: 100px;
+    margin-top: 35px;
+    display: flex;
+}
+.color{
+    height: 100%;
+    width: calc(100% / 7);
+    border: solid;
+    box-sizing: border-box;
+  
+}
+.red {
+    background: red;
+}
+.orange {
+    background: orange;
+}
+.yellow {
+    background: yellow;
+}
+.green {
+background: forestgreen;
+
+}
+.lblue {
+    background: lightblue;
+}
+.dblue {
+    background: blue;
+}
+.violet {
+    background: violet;
+}
+.color img {
+    height: 100%;
+    width: 100%;
+}
+.square img {
+height: 100%;
+width: 100%;        
+}
