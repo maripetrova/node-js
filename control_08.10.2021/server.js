@@ -3,13 +3,16 @@ const fs = require("fs");
 const port = 3004;
 
 let text = fs.readFileSync("file.csv", "utf8");
-let textArr = text.split(",");
+let textArr = text.split(";");
 let textArrDubl = [];
 
 textArr.forEach((e) => {
-    textArrDubl.push(e.split("'"))
+    textArrDubl.push(e.split(","));
+
 })
 console.log(textArrDubl)
+
+
 
 // const server = http.createServer((req, res) => {
 //     console.log(req.url)
