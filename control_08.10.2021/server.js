@@ -14,17 +14,16 @@ console.log(textArrDubl)
 
 
 
-// const server = http.createServer((req, res) => {
-//     console.log(req.url)
-//     if (req.url === "/") {
-//         fs.readFile("./public/index.html", (err, data) => {
-//             res.write(!err ? data : "Файл упал", "utf8");
-//             res.end();
-//         });
-//     } else {
-//         let read = fs.readFileSync("file.csv");
-//         console.log(read);
-//     }
-// });
-// server.listen(port, err => !err && console.log("Server starting"))
-//
+const server = http.createServer((req, res) => {
+    if (req.url === "/") {
+        fs.readFile("./public/index.html", (err, data) => {
+            res.write(!err ? data : "Файл упал", "utf8");
+            res.end();
+        });
+    } else {
+        let read = fs.readFileSync("file.csv");
+        console.log(read);
+    }
+});
+server.listen(port, err => !err && console.log("Server starting"))
+
