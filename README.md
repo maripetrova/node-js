@@ -22,16 +22,8 @@
         - mimeTypes {}
 4. Express
    - *13.10.2021*
-<<<<<<< HEAD
     - npm init -y
    - *15.10.2021*
     - CRUD
     - RESTfull-API
-    -REST-API
-=======
-        - npm init -y
-   - *15.10.2021*
-        - CRUD
-        - RESTfull-API
-        - REST-API
->>>>>>> 57ac0ec7d59f7419703ffcabd01102bcc8cc602f
+    - REST-API
